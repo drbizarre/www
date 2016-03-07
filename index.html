@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+        <title>Ofertas para regalar</title>
+    </head>
+
+    <body>
+        <!-- PAGINA 1 CATEGORIAS-->
+        <div data-role="page" id="one" class="page">
+
+            <div data-role="header" data-position="fixed">
+                <h1><img src="img/icon.png"></h1>
+            </div>
+
+            <div data-role="content" class="pageapp">
+                <p>Encuentra cientos de productos en oferta</p>
+                <p id="cargando">cargando...</p>
+                <ul id="listado-categorias" class="list-view" data-role="listview" data-split-icon="edit" data-split-theme="a" data-inset="true" data-filter-placeholder="Buscar producto..." >
+                </ul>            
+            </div>    
+
+        </div>
+
+        <!-- PAGINA 2 SUBCATEGORIAS-->
+        <div data-role="page" id="two" class="page">
+
+            <div data-role="header" data-position="fixed">
+                <a href="#one" data-direction="reverse" data-icon="back">Back</a>
+                <h1><img src="img/icon.png"></h1>
+            </div>
+
+            <div data-role="content" class="pageapp">
+                <ul id="listado-subcategorias" data-role="listview" data-split-icon="edit" data-split-theme="a" data-inset="true"  >
+                </ul>                            
+            </div>
+        </div>
+
+        <!-- PAGINA 3 PRODUCTOS-->
+        <div data-role="page" id="three" class="page">
+
+            <div data-role="header" data-position="fixed">
+                <a href="#two" data-direction="reverse" data-icon="back">Back</a>
+                <h1><img src="img/icon.png"></h1>
+            </div>
+
+            <div data-role="content" class="pageapp">
+                <ul id="listado-productos" data-role="listview" data-split-icon="edit" data-split-theme="a" data-inset="true"  >
+                </ul>                            
+            </div>
+        </div>
+
+        <!-- PAGINA 4 DETALLE PRODUCTO-->
+        <div data-role="page" id="four" class="page">
+
+            <div data-role="header" data-position="fixed">
+                <a href="#three" data-direction="reverse" data-icon="back">Back</a>
+                <h1><img src="img/icon.png"></h1>
+            </div>
+
+            <div data-role="content" class="pageapp">
+                <input type="hidden" id="producto_id" />
+                <h2 id="nombre_producto"></h2>
+                <h3 id="precio_producto"></h3>
+                <h4 id="codigo_producto"></h4>
+                <img id="foto_producto" src="">
+            </div>
+            <div data-role="footer" data-position="fixed">
+                
+                <h1><a id="apartarbutton" class="ui-btn ui-corner-all ui-shadow" href="#">APARTALO</a></h1>
+                
+            </div>
+        </div>
+
+        <!-- PAGINA 5 APARTAR PRODUCTO-->
+        <div data-role="page" id="five" class="page">
+
+            <div data-role="header" data-position="fixed">
+                <a href="#four" data-direction="reverse" data-icon="back">Back</a>
+                <h1><img src="img/icon.png"></h1>
+            </div>
+
+            <div data-role="content" class="pageapp">
+                <div class="ui-bar ui-bar-a ui-corner-all">
+                    A partir de este momento tienes 60 minutos para hacer tu depósito de <strong><span id="deposito">$108</span> <br>
+                    en un oxxo o en Santander  con el número de tarjeta: <br>
+                    <code> 5579 1001 3979 5643</code> <br>
+                    Favor de enviar tu pago por WhatsApp al teléfono <i>(55)5408-7701</i>
+                </div>
+                <hr>
+                <form id="apartadof">
+                <input id="codigo" type="hidden" value="">
+                <input id="id" type="hidden" value="">    
+                  <div class="form-group">
+                    <label for="producto">Producto</label>
+                    <input type="text" placeholder="producto" id="producto" class="form-control">
+                  </div>  
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" placeholder="Tu nombre" id="nombre" class="form-control">
+                  </div>  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Correo</label>
+                    <input type="email" placeholder="Email" id="correo" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Telefono</label>
+                    <input type="tel" placeholder="telefono" id="telefono" class="form-control">
+                  </div>
+                 
+                </form>                    
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1><button id="apartarbuttontoserver" data-theme="a" type="button" class="ui-btn-hidden" aria-disabled="false">APARTAR</button></h1>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+    </body>
+</html>
