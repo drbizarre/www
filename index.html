@@ -51,7 +51,7 @@
         <div data-role="page" id="two" class="page">
 
             <div data-role="header" data-position="fixed">
-                <a href="#one" data-direction="reverse" data-icon="back">Back</a>
+                <a href="#one" data-direction="reverse" data-icon="back">regresar</a>
                 <h1><img src="img/icon.png"></h1>
             </div>
 
@@ -59,13 +59,22 @@
                 <ul id="listado-subcategorias" data-role="listview" data-split-icon="edit" data-split-theme="a" data-inset="true"  >
                 </ul>                            
             </div>
+<div data-role="footer" data-position="fixed">
+    <div data-role="navbar" data-grid="b">
+    <ul>
+        <li><a href="#" id="chat" data-icon="custom">Para EL</a></li>
+        <li><a href="#" id="email" data-icon="custom">Para ELLA</a></li>
+        <li><a href="#" id="skull" data-icon="custom">BEBE</a></li>
+    </ul>
+    </div>
+</div>            
         </div>
 
         <!-- PAGINA 3 PRODUCTOS-->
         <div data-role="page" id="three" class="page">
 
             <div data-role="header" data-position="fixed">
-                <a href="#two" data-direction="reverse" data-icon="back">Back</a>
+                <a href="#two" data-direction="reverse" data-icon="back">regresar</a>
                 <h1><img src="img/icon.png"></h1>
             </div>
 
@@ -79,16 +88,23 @@
         <div data-role="page" id="four" class="page">
 
             <div data-role="header" data-position="fixed">
-                <a href="#three" data-direction="reverse" data-icon="back">Back</a>
+                <a href="#three" data-direction="reverse" data-icon="back">regresar</a>
                 <h1><img src="img/icon.png"></h1>
             </div>
 
             <div data-role="content" class="pageapp">
                 <input type="hidden" id="producto_id" />
-                <h2 id="nombre_producto"></h2>
-                <h3 id="precio_producto"></h3>
-                <h4 id="codigo_producto"></h4>
+                <div id="datosproducto">
+                    <span id="nombre_producto"></span>
+                    <span id="codigo_producto"></span>
+                    <h1 id="precio_producto"></h1>
+                </div>
+                
+                    
                 <img id="foto_producto" src="">
+                
+
+                
             </div>
             <div data-role="footer" data-position="fixed">
                 
@@ -101,13 +117,13 @@
         <div data-role="page" id="five" class="page">
 
             <div data-role="header" data-position="fixed">
-                <a href="#four" data-direction="reverse" data-icon="back">Back</a>
+                <a href="#four" data-direction="reverse" data-icon="back">regresar</a>
                 <h1><img src="img/icon.png"></h1>
             </div>
 
             <div data-role="content" class="pageapp">
                 <div class="ui-bar ui-bar-a ui-corner-all">
-                    A partir de este momento tienes 60 minutos para hacer tu depósito de <strong><span id="deposito">$108</span> <br>
+                    A partir de este momento tienes 60 minutos para hacer tu depósito <strong><span id="deposito"></span> <br>
                     en un oxxo o en Santander  con el número de tarjeta: <br>
                     <code> 5579 1001 3979 5643</code> <br>
                     Favor de enviar tu pago por WhatsApp al teléfono <i>(55)5408-7701</i>

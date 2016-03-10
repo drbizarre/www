@@ -68,14 +68,17 @@ $('#listado-subcategorias').delegate('a.products2category', 'click', function ()
         $("#listado-productos").html("");
         $.getJSON( "http://api.ofertaspararegalar.com/productosbycat/"+$(this).data('id'), function( data ) {
             $.each( data.productos, function( i, item ) {
-               $("#listado-productos").append('<li><a class="productdetail" href="#four" data-foto="'+item.foto+'" data-marca="'+item.marca+'" data-precio="'+item.precio_venta_real+'" data-id="'+item.id+'" data-nombre="'+item.nombre+'" data-codigo="'+item.codigo+'"><img src="http://erp.ofertaspararegalar.com/media/thumbs/'+item.foto+'" /><h2>'+item.nombre+'</h2><h3>'+item.marca+'</h3><p>'+item.codigo+'</p><span class="ui-li-count ui-btn-up-b ui-btn-corner-all">$'+item.precio_venta_real+'</span></a></li>').listview('refresh');
+                var precio = parseInt(item.precio_venta_real);
+               //$("#listado-productos").append('<li><a class="productdetail" href="#four" data-foto="'+item.foto+'" data-marca="'+item.marca+'" data-precio="'+item.precio_venta_real+'" data-id="'+item.id+'" data-nombre="'+item.nombre+'" data-codigo="'+item.codigo+'"><img src="http://erp.ofertaspararegalar.com/media/thumbs/'+item.foto+'" /><h2>'+item.nombre+'</h2><h3>'+item.marca+'</h3><p>'+item.codigo+'</p><span class="ui-li-count ui-btn-up-b ui-btn-corner-all">$'+item.precio_venta_real+'</span></a></li>').listview('refresh');
+               $("#listado-productos").append('<li><a class="productdetail" href="#four" data-foto="'+item.foto+'" data-marca="'+item.marca+'" data-precio="'+item.precio_venta_real+'" data-id="'+item.id+'" data-nombre="'+item.nombre+'" data-codigo="'+item.codigo+'"><img src="http://erp.ofertaspararegalar.com/media/thumbs/'+item.foto+'" /><h2>$'+precio+'</h2><p>'+item.nombre+'</p></a></li>').listview('refresh');
             });
         });     
 });
 $('#listado-productos').delegate('a.productdetail', 'click', function () {
+    var precio = parseInt($(this).data('precio'));
         $("#codigo_producto").html($(this).data('codigo'));
         $("#nombre_producto").html($(this).data('nombre'));
-        $("#precio_producto").html("$"+$(this).data('precio'));
+        $("#precio_producto").html("$"+precio);
         $("#foto_producto").attr("src","http://erp.ofertaspararegalar.com/media/"+$(this).data('foto'));
         $("#foto_producto").attr("width","100%");
         $("#producto_id").val($(this).data('id'));    

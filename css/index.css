@@ -136,5 +136,23 @@ h1 {
 
 #detalles-compra{display: none;}
 
-#apartarbutton{margin: 0 auto; padding:10px;}
+#apartarbutton{margin: 0 auto; padding:10px; background: #0077cc!important; color:#ffffff; width: 100%;}
+
+#nombre_producto{text-align: center;}
+#pricedetail{border-top: 1px solid #dddddd;
+             border-left: 1px solid #dddddd;
+             border-bottom: 1px solid #dddddd;
+             padding: 5px;
+             text-align: center;
+             font-weight: bold;
+}
+#codedetail{border-top: 1px solid #dddddd;
+             border-left: 1px solid #dddddd;
+             border-right: 1px solid #dddddd;
+             border-bottom: 1px solid #dddddd;
+             padding: 5px;
+             text-align: center;
+}
+#productinfodetail{margin-bottom: 10px;}
+#datosproducto{text-align: center;}
 
