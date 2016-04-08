@@ -111,3 +111,23 @@ $('body').delegate('#apartarbuttontoserver', 'click', function () {
         $.mobile.changePage('#one', { transition: "fade"} );
     });
 });
+$('body').delegate('#llama', 'click', function () {
+    //window.location.href = "tel:2125551212";
+   phonedialer.dial("2125551212",   function(err) {   if (err == "empty") alert("Unknown phone number"); else alert("Dialer Error:" + err);  }, function(success) { alert('Dialing succeeded'); } );
+});
+$('body').delegate('#irael', 'click', function () {
+$("#listado-subcategorias").html("");
+        $.getJSON( "http://api.ofertaspararegalar.com/subcategorias/EL", function( data ) {
+            $.each( data.subcategorias, function( i, item ) {
+               $("#listado-subcategorias").append('<li><a class="products2category" data-id="'+item.id+'" href="#three"><h2>'+item.nombre+'</h2></a></li>').listview('refresh');
+            });
+        });   
+});
+$('body').delegate('#iraella', 'click', function () {
+$("#listado-subcategorias").html("");
+        $.getJSON( "http://api.ofertaspararegalar.com/subcategorias/ELLA", function( data ) {
+            $.each( data.subcategorias, function( i, item ) {
+               $("#listado-subcategorias").append('<li><a class="products2category" data-id="'+item.id+'" href="#three"><h2>'+item.nombre+'</h2></a></li>').listview('refresh');
+            });
+        });   
+});
